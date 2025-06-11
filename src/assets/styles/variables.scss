@@ -1,0 +1,88 @@
+@use 'sass:map';
+@use 'vuetify/styles' as vuetify;
+
+// Netflix Theme Variables
+$netflix: (
+  'red': #E50914,
+  'black': #141414,
+  'dark-gray': #564d4d,
+  'surface': #1f1f1f,
+  'surface-bright': #2f2f2f,
+);
+
+// Theme Colors
+$primary: map.get($netflix, 'red');
+$background: map.get($netflix, 'black');
+$surface: map.get($netflix, 'surface');
+$surface-bright: map.get($netflix, 'surface-bright');
+$dark-gray: map.get($netflix, 'dark-gray');
+
+// Typography
+$body-font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$heading-font-family: $body-font-family;
+
+// Breakpoints
+$grid-breakpoints: (
+  'xs': 0,
+  'sm': 600px,
+  'md': 960px,
+  'lg': 1264px,
+  'xl': 1904px
+);
+
+// Layout
+$container-max-widths: (
+  'md': 904px,
+  'lg': 1204px,
+  'xl': 1844px
+);
+
+// Components
+$card-hover: (
+  'scale': 1.5,
+  'z-index': 10,
+  'transition': 0.3s
+);
+
+$overlay: (
+  'background': linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent),
+  'z-index': 5
+);
+
+// Transitions
+$transitions: (
+  'fast': 0.15s,
+  'default': 0.3s,
+  'slow': 0.5s
+);
+
+// Spacing
+$spacer: 4px;
+$spacers: (
+  0: 0,
+  1: $spacer,
+  2: $spacer * 2,
+  3: $spacer * 4,
+  4: $spacer * 6,
+  5: $spacer * 8,
+  6: $spacer * 12,
+  7: $spacer * 16
+);
+
+// Z-index levels
+$z-index-levels: (
+  'base': 1,
+  'hover': map.get($card-hover, 'z-index'),
+  'overlay': map.get($overlay, 'z-index'),
+  'modal': 1000,
+  'tooltip': 2000
+);
+
+// Export for use in components
+:export {
+  primary: $primary;
+  background: $background;
+  surface: $surface;
+  surfaceBright: $surface-bright;
+  darkGray: $dark-gray;
+}
